@@ -8,88 +8,86 @@
 
 <ion-content [fullscreen]="true" class="ion-justify-content-center">
   <ion-row class="ion-justify-content-center">
-    <ion-col size-lg="2" id="main">
+    <ion-col size-lg="2" id="main" class="ion-padding">
         <ion-row class="ion-justify-content-end ion-text-end">
-          <ng-container *ngIf="this.resultado === ''">
-            <ion-input [readonly]="true" type="number" (change)="this.select_number($event)" value={{this.num1}}></ion-input>
+            <ion-input [readonly]="true" type="number" *ngIf="this.resultado === ''" (change)="this.select_number($event)" value={{this.num1}}></ion-input>
             <ng-container *ngIf="this.operador !== ''">
               <ion-input [readonly]="true" class="ion-text-end" value={{this.operador}}></ion-input>
               <ion-input [readonly]="true" type="number" class="ion-text-end" value={{this.num2}}></ion-input>
             </ng-container>
-          </ng-container>
           <ng-container *ngIf="this.resultado !== ''">
             <ion-input type="number" class="ion-text-end" value={{this.resultado}}></ion-input>
           </ng-container>
         </ion-row>
 
       <ion-grid>
-          <ion-row>
-            <ion-col>
+          <ion-row size-lg="12">
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.apagar_atual()">C</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.apagar_tudo()">CE</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.apagar_ultimo()">X</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_operador($event)">/</ion-button>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>
+          <ion-row size-lg="12">
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">7</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">8</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">9</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_operador($event)">*</ion-button>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>
+          <ion-row size-lg="12">
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">4</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">5</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">6</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_operador($event)">+</ion-button>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>
+          <ion-row size-lg="12">
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">1</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">2</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">3</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_operador($event)">-</ion-button>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>
+          <ion-row size-lg="12">
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large"  (click)="this.select_number($event)">.</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_number($event)">0</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.select_sinal($event)">-/+</ion-button>
             </ion-col>
-            <ion-col>
+            <ion-col size-lg="3">
               <ion-button expand="block" size="large" (click)="this.op_resultado()">=</ion-button>
             </ion-col>
           </ion-row>
