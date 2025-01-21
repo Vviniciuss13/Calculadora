@@ -23,9 +23,10 @@ export class HomePage {
     }
 
     if(this.operador == ''){
-      this.num1 = this.num1 + +(event.target.innerText);
+      this.num1 = this.num1 + (event.target.innerText);
+      console.log(this.num1)
     }else{
-      this.num2 = this.num2 + +(event.target.innerText);
+      this.num2 = this.num2 + (event.target.innerText);
     }
   }
 
@@ -75,31 +76,16 @@ export class HomePage {
     this.num2 = '';
   }
 
-  op_resultado(){
+  op_resultado(){    
     if(this.operador == '*'){
-      if(this.resultado != ''){
-        this.resultado = +this.resultado * +this.num2;
-      }else{
-        this.resultado = +this.num1 * +this.num2;
-      }
+      this.resultado != '' ? this.resultado = this.resultado * +this.num2 : this.resultado = +this.num1 * +this.num2;
     }else if(this.operador == '/'){
-      if(this.resultado != ''){
-        this.resultado = +this.resultado / +this.num2;
-      }else{
-        this.resultado = +this.num1 / +this.num2;
-      }
+      this.resultado != '' ? this.resultado = this.resultado / +this.num2 : this.resultado = +this.num1 / +this.num2;
     }else if(this.operador == '+'){
-      if(this.resultado != ''){
-        this.resultado = +this.resultado + +this.num2;
-      }else{
-        this.resultado = +this.num1 + +this.num2;
-      }
+      this.resultado != '' ? this.resultado = this.resultado + +this.num2 : this.resultado = +this.num1 + +this.num2;
     }else{
-      if(this.resultado != ''){
-        this.resultado = +this.resultado - +this.num2;
-      }else{
-        this.resultado = +this.num1 - +this.num2;
-      }
+      this.resultado != '' ? this.resultado = this.resultado - +this.num2 : this.resultado = +this.num1 - +this.num2;
     }
+    this.num1 = '';
   }
 }
